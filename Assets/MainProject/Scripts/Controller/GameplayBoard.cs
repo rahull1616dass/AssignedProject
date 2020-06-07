@@ -127,6 +127,7 @@ public class GameplayBoard : MonoBehaviour
                 {
                     square._diamond = Instantiate(m_Diamond, square.transform, false);
                     square._diamond.transform.localPosition = new Vector3(0f, 0f, 0f);
+                    GameManager.Instance._sessionHandler._totalDiamonds++;
                 }
             }
         }

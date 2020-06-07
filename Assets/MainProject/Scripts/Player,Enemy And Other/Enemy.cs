@@ -78,7 +78,9 @@ public class Enemy : MonoBehaviour, ISessionEvent
 
     public void OnPlayerReach() 
     {
-        InfoPopup.CreateInfoPopup("GameOver\nTotalScore: " + GameManager.Instance._sessionHandler._playerScore, "RESTART", GameManager.Instance._sessionHandler.OnRestart);
+        if (GameManager.Instance._sessionHandler._playerScore < GameManager.Instance._sessionHandler._totalDiamonds)
+            return;
+        InfoPopup.CreateInfoPopup("YOU WON!!!\nTotalScore: " + GameManager.Instance._sessionHandler._playerScore, "RESTART", GameManager.Instance._sessionHandler.OnRestart);
     }
     #endregion
 

@@ -12,6 +12,7 @@ public class GameSessionHandler : MonoBehaviour
 {
     public List<ISessionEvent> _iGameSessionEvents = new List<ISessionEvent>();
     [HideInInspector] public int _playerScore;
+    [HideInInspector] public int _totalDiamonds;
     public void OnPlayerEndMoving()
     {
         _iGameSessionEvents.ForEach(x => x.OnPlayerMoveEnd());
